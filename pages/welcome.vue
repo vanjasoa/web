@@ -26,7 +26,11 @@
               <CategoryCard v-for="category in categoryList" :name="category" />
             </template>
             <template #productlist>
-              <ProductCard v-for="product in productList" :product="product" />
+              <ProductCard v-for="product in productList" :product="product" >
+                <template #image >
+                  <ImagePizza />
+                </template>
+              </ProductCard>
             </template>
           </CollectContent>
           <QrCodeContent v-if="itemsMenu[showContent].title == 'Mon QR' " >
@@ -39,17 +43,34 @@
               <button @click="showContent = null">retour</button>
             </template>
             <template #levels >
-              <LevelsCard v-for="level in levelsList" :level="level" />
+              <LevelsCard v-for="level in levelsList" :level="level">
+                <template #image >
+                  <Level />
+                </template>
+              </LevelsCard>
             </template>
           </RewardsContent>
           <ProfilContent v-if="itemsMenu[showContent].title == 'Profil' ">
             <template #retour >
               <button @click="showContent = null">retour</button>
             </template>
+            <template #content>
+              <Badge />
+            </template>
           </ProfilContent>
         </div>
+        <div>
+          <button @click="showCart = true">
+            <CartButtom />
+          </button>
+        </div>
+        <CartModal v-if="showCart == true" />
         
-        <LevelsProgressBar />
+        <LevelsProgressBar>
+          <template #level>
+            <Level />
+          </template>
+        </LevelsProgressBar>
 
     </div>
 </template>
@@ -57,6 +78,7 @@
 <script setup>
 
 const showContent = ref(null);
+const showCart = ref(false);
 
 const itemsMenu = [
   {

@@ -1,5 +1,5 @@
 <template>
-    <div class="w-[177px] h-[200px] border-4">
+    <div class="w-[177px] h-[200px] border-4 rounded-xl">
         Category {{ props.name }}
     </div>
 </template>
