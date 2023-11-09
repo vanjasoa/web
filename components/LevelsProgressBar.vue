@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="w-full h-[400px] border-4">
         Progress bar
     </div>
 </template>
