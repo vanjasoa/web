@@ -13,7 +13,7 @@
 
         <MenuList v-if="showContent === null" >
             <template #menulist >
-                <MenuButton v-for="(item, index) in itemsMenu" :key="index" :name="item.title" @click="showContent = index" />
+                <MenuButton v-for="(item, index) in itemsMenu" :key="index" :name="item.title" @click="showContent = index" :color="item.color" />
             </template>
         </MenuList>
 
