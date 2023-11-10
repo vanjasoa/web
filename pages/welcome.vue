@@ -127,15 +127,19 @@ const productList = [
 const levelsList = [
   {
     name:'noobs',
-    point:20
+    point:0
   },
   {
     name:'fastoPRIME',
-    point:20
+    point:50
   },
   {
     name:'el gourmet',
-    point:20
+    point:75
+  },
+  {
+    name:'Miam Master',
+    point:100
   },
 ]
 

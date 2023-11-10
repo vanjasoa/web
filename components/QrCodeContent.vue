@@ -1,7 +1,10 @@
 <template>
-        <div>
+        <div class="flex flex-col justify-center items-center">
             <slot name="retour" />
-            <QRCodeVue3 value="Simple QR code" />
+            <div class="my-16">
+                <QRCodeVue3 value="Simple QR code" />
+            </div>
+            <h1 class="text-xl font-extrabold">Présentez votre pass</h1>
         </div>
 </template>
 

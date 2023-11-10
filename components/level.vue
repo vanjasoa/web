@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg"
+    <div class="w-[263px] h-[230px]">
+        <svg viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <rect width="150" height="150" fill="url(#pattern0)" />
             <defs>
