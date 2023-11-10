@@ -30,6 +30,9 @@
                 <template #image >
                   <ImagePizza />
                 </template>
+                <template #point>
+                  <PointButton />
+                </template>
               </ProductCard>
             </template>
           </CollectContent>
@@ -64,10 +67,17 @@
             <CartButtom />
           </button>
         </div>
-        <CartModal v-if="showCart == true" />
+        <CartModal v-if="showCart == true">
+          <template #retour>
+            <button @click="showCart = false">fermer</button>
+          </template>
+        </CartModal>
         
         <LevelsProgressBar>
           <template #level>
+            <Level />
+          </template>
+          <template #next-level>
             <Level />
           </template>
         </LevelsProgressBar>
@@ -126,15 +136,15 @@ const productList = [
 
 const levelsList = [
   {
-    name:'noobs',
+    name:'Noobs',
     point:0
   },
   {
-    name:'fastoPRIME',
+    name:'FastoPRIME',
     point:50
   },
   {
-    name:'el gourmet',
+    name:'El gourmet',
     point:75
   },
   {

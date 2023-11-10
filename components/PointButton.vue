@@ -22,7 +22,7 @@
                 </filter>
             </defs>
         </svg>
-        <span class="text-xl text-white font-extrabold">30</span>
+        <span class="absolute mt-[-60px] ml-[35px] text-xl text-white font-extrabold">30</span>
 
     </div>
 </template>
