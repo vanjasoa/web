@@ -1,13 +1,8 @@
 <template>
-    <div>
-        QrCode content
         <div>
             <slot name="retour" />
-            <QRCodeVue3
-          value="Simple QR code"
-        />
+            <QRCodeVue3 value="Simple QR code" />
         </div>
-    </div>
 </template>
 
 <script setup>
