@@ -53,7 +53,7 @@
               </LevelsCard>
             </template>
           </RewardsContent>
-          <ProfilContent v-if="itemsMenu[showContent].title == 'Profil' ">
+          <ProfilContent v-if="itemsMenu[showContent].title == 'Profil'" @quit="deconnecter" :user-content="user" >
             <template #retour >
               <button @click="showContent = null">retour</button>
             </template>
@@ -86,6 +86,15 @@
 </template>
 
 <script setup>
+// definePageMeta({
+//   middleware: 'auth' 
+// })
+const { logout } = useDirectusAuth();
+const user = useDirectusUser();
+
+const deconnecter = async () => {
+  logout();
+};
 
 const showContent = ref(null);
 const showCart = ref(false);

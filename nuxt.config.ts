@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
-    '@nuxtjs/tailwindcss'
-  ]
+    '@nuxtjs/tailwindcss',
+    'nuxt-directus'
+  ],
+  directus: {
+    url: "http://localhost:8055/"
+  }
 })
