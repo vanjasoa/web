@@ -1,5 +1,12 @@
 <template>
     <div>
-        Home Page
+        <TopNav>
+            <template #logo>
+                <Logo />
+            </template>
+        </TopNav>
+        <AuthButton />
+        <AuthCard />
+        <ProjectDescriptionCard />
     </div>
 </template>
