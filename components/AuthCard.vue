@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="flex flex-col items-center my-16">
+        <div v-if="props.showAuth === 'login'" class="flex flex-col items-center my-16">
             <h1 class="font-extrabold text-4xl my-4">BIENVENUE</h1>
             <p class="text-xl mx-16 text-center my-4">
                 Connectez-vous avec votre nom d’utilisateur ou numéro de téléphone
@@ -20,7 +20,8 @@
                 
             </form>
         </div>
-        <div class="flex flex-col items-center my-16">
+
+        <div v-if="props.showAuth === 'register'" class="flex flex-col items-center my-16">
             <h1 class="font-extrabold text-4xl my-4">Commencez</h1>
             <p class="text-xl mx-16 text-center my-4">
                 Remplissez les champs ci-dessous pour vous inscrire.
@@ -46,3 +47,7 @@
         </div>
     </div>
 </template>
+
+<script setup>
+const props = defineProps(['showAuth'])
+</script>
