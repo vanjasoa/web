@@ -20,7 +20,7 @@
         <div v-else>
           <CollectContent v-if="itemsMenu[showContent].title == 'Je collecte' " >
             <template #retour >
-              <button @click="showContent = null">retour</button>
+              <MenuButton @click="showContent = null" :name="itemsMenu[showContent].title" :color="itemsMenu[showContent].color" />
             </template>
             <template #category>
               <CategoryCard v-for="category in categoryList" :name="category" />
@@ -38,12 +38,12 @@
           </CollectContent>
           <QrCodeContent v-if="itemsMenu[showContent].title == 'Mon QR' " >
             <template #retour >
-              <button @click="showContent = null">retour</button>
+              <MenuButton @click="showContent = null" :name="itemsMenu[showContent].title" :color="itemsMenu[showContent].color" />
             </template>
           </QrCodeContent>
           <RewardsContent v-if="itemsMenu[showContent].title == 'Mes recompenses' "> 
             <template #retour >
-              <button @click="showContent = null">retour</button>
+              <MenuButton @click="showContent = null" :name="itemsMenu[showContent].title" :color="itemsMenu[showContent].color" />
             </template>
             <template #levels >
               <LevelsCard v-for="level in levelsList" :level="level">

@@ -1,7 +1,10 @@
 <template>
     <div>
-        <div>
-            <slot name="retour" />
+        <div class="flex flex-col items-center">
+            <div class="mt-[-100px]">
+                <slot name="retour" />
+            </div>
+            
             <div class="flex justify-around my-2">
                 <slot name="category" />
             </div>
