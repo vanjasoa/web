@@ -30,6 +30,12 @@
                 <input class="w-[520px] h-[70px] bg-[#F8F8F8] border-2 rounded-md my-1 p-2" type="text" placeholder="Votre nom d’utilisateur">
                 <input class="w-[520px] h-[70px] bg-[#F8F8F8] border-2 rounded-md my-1 p-2" type="text" placeholder="Votre nom">
                 <input class="w-[520px] h-[70px] bg-[#F8F8F8] border-2 rounded-md my-1 p-2" type="text" placeholder="Votre prénom">
+                <span class="self-start my-4">Votre date de naissance</span>
+                <div class="w-[520px] flex flex-row justify-between">
+                    <input class="w-[150px] h-[70px] bg-[#F8F8F8] border-2 rounded-md my-1 p-2" type="text" placeholder="Jour">
+                    <input class="w-[150px] h-[70px] bg-[#F8F8F8] border-2 rounded-md my-1 p-2" type="text" placeholder="Mois">
+                    <input class="w-[150px] h-[70px] bg-[#F8F8F8] border-2 rounded-md my-1 p-2" type="text" placeholder="Année">
+                </div>
                 <input class="w-[520px] h-[70px] bg-[#F8F8F8] border-2 rounded-md my-1 p-2" type="text" placeholder="Votre numéro de téléphone">
                 <input class="w-[520px] h-[70px] bg-[#F8F8F8] border-2 rounded-md my-1 p-2" type="text" placeholder="Votre adresse email">
                 <input class="w-[520px] h-[70px] bg-[#F8F8F8] border-2 rounded-md my-1 p-2" type="password" placeholder="Votre mot de passe">
