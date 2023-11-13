@@ -89,12 +89,13 @@
 // definePageMeta({
 //   middleware: 'auth' 
 // })
-const { logout } = useDirectusAuth();
-const user = useDirectusUser();
 
-const deconnecter = async () => {
-  logout();
-};
+// const { logout } = useDirectusAuth();
+// const user = useDirectusUser();
+
+// const deconnecter = async () => {
+//   logout();
+// };
 
 const showContent = ref(null);
 const showCart = ref(false);

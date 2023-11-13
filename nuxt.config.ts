@@ -6,6 +6,6 @@ export default defineNuxtConfig({
     'nuxt-directus'
   ],
   directus: {
-    url: "http://localhost:8055/"
+    url: "https://directus-production-2a05.up.railway.app/"
   }
 })

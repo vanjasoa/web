@@ -6,7 +6,7 @@
             </template>
         </TopNav>
         <AuthButton @login="showAuth = 'login'" @register="showAuth = 'register'" />
-        <AuthCard v-if="showAuth" :show-auth="showAuth" @connexion="onSubmit"/>
+        <AuthCard v-if="showAuth" :show-auth="showAuth" @connexion="onSubmit" />
         <ProjectDescriptionCard v-else />
     </div>
 </template>
@@ -16,12 +16,14 @@ const { login } = useDirectusAuth()
 
 const showAuth = ref(null)
 
-const onSubmit = async (loginData) => {
-    try {    
-        await login({ email: 'teddy@mail.com', password: '123456' });
-  } catch (e) {
-    console.log(e)
-}}
 
+
+const onSubmit = async (loginData) => {
+    try {
+        await login({ data: { email: 'teddy@mail.com', password: '123456' } });
+    } catch (e) {
+        console.log(e)
+    }
+}
 
 </script>
