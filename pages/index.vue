@@ -12,19 +12,16 @@
 </template>
 
 <script setup>
-const { createUser, login } = useDirectusAuth()
-const { createUsers } = useDirectusUsers()
+const { login } = useDirectusAuth()
+
 const showAuth = ref(null)
-const router = useRouter()
 
 const onSubmit = async (loginData) => {
     try {    
-        await login({ email: loginData.email, password: loginData.password });
-  } catch (e) {}
-}
+        await login({ email: 'teddy@mail.com', password: '123456' });
+  } catch (e) {
+    console.log(e)
+}}
 
-// function afficher(donnee) {
-//     console.log(donnee)
-// }
 
 </script>

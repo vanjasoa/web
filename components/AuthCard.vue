@@ -6,8 +6,8 @@
                 Connectez-vous avec votre nom d’utilisateur ou numéro de téléphone
             </p>
             <form class="flex flex-col items-center my-8">
-                <input v-model="loginForm.email" class="w-[520px] h-[70px] bg-[#F8F8F8] border-2 rounded-md my-1 p-2" type="text" placeholder="Votre nom d’utilisateur ou téléphone">
-                <input v-model="loginForm.password" class="w-[520px] h-[70px] bg-[#F8F8F8] border-2 rounded-md my-1 p-2" type="password" placeholder="Votre mot de passe">
+                <input name="email" v-model="loginForm.email" class="w-[520px] h-[70px] bg-[#F8F8F8] border-2 rounded-md my-1 p-2" type="text" placeholder="Votre nom d’utilisateur ou téléphone">
+                <input name="password" v-model="loginForm.password" class="w-[520px] h-[70px] bg-[#F8F8F8] border-2 rounded-md my-1 p-2" type="password" placeholder="Votre mot de passe">
                 <div class="flex justify-between w-full my-4">
                     <div>
                         <input class="mx-2" type="checkbox">
@@ -17,7 +17,6 @@
                     <a href="#">Mot de passe oublié ?</a>
                 </div>
                 <button @click="emit('connexion',loginForm)" class="w-[520px] h-[70px] bg-[#E61B21] rounded-md text-white text-xl font-extrabold">Se Connecter</button>
-                
             </form>
         </div>
 
@@ -60,7 +59,5 @@ const emit =  defineEmits(['connexion'])
 
 const loginForm = ref({ email: 'teddy@mail.com', password: '123456' })
 
-// const login = () => {
-//     emit('connexion',email.value,password.value)
-// }
+
 </script>
