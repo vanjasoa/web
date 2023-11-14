@@ -5,7 +5,7 @@
             <p class="text-xl mx-16 text-center my-4">
                 Connectez-vous avec votre nom d’utilisateur ou numéro de téléphone
             </p>
-            <form class="flex flex-col items-center my-8">
+            <div class="flex flex-col items-center my-8">
                 <input name="email" v-model="loginForm.email" class="w-[520px] h-[70px] bg-[#F8F8F8] border-2 rounded-md my-1 p-2" type="text" placeholder="Votre nom d’utilisateur ou téléphone">
                 <input name="password" v-model="loginForm.password" class="w-[520px] h-[70px] bg-[#F8F8F8] border-2 rounded-md my-1 p-2" type="password" placeholder="Votre mot de passe">
                 <div class="flex justify-between w-full my-4">
@@ -17,7 +17,7 @@
                     <a href="#">Mot de passe oublié ?</a>
                 </div>
                 <button @click="emit('connexion',loginForm)" class="w-[520px] h-[70px] bg-[#E61B21] rounded-md text-white text-xl font-extrabold">Se Connecter</button>
-            </form>
+            </div>
         </div>
 
         <div v-if="props.showAuth === 'register'" class="flex flex-col items-center my-16">
