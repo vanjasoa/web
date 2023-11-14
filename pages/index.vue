@@ -1,32 +1,46 @@
 <template>
-    <div>
-        <TopNav>
-            <template #logo>
-                <Logo @click="showAuth = null" />
+  <TopNavigationBar>
+            <template #logo >
+                <NuxtImg src="/logo.png" />
             </template>
-        </TopNav>
-        <button class="w-128 h-128 bg-slate-400" @click="onSubmit">connexionTest</button>
-        <button class="w-128 h-128 bg-slate-400" @click="logout">Deconnexion</button>
-        <AuthButton @login="showAuth = 'login'" @register="showAuth = 'register'" />
-        <AuthCard v-if="showAuth" :show-auth="showAuth" @connexion="onSubmit" />
-        <ProjectDescriptionCard v-else />
-    </div>
+        </TopNavigationBar>
+    <AuthButton @login="showAuth = 'login'" @register="showAuth = 'register'" />
+    <AuthCard v-if="showAuth" :show-auth="showAuth" @connexion="onSubmit" @register="onRegister" />
+    <ProjectDescriptionCard @call-to-action="showAuth = 'register'" v-else />
 </template>
 
 <script setup>
-const { login, logout } = useDirectusAuth();
-const user = useDirectusUser();
+const showAuth = ref(null)
+const { getItems } = useDirectusItems();
+const { login, createUser } = useDirectusAuth();
+const product = ref({})
+const router = useRouter();
+//const { createUsers } = useDirectusUsers();
 
 const onSubmit = async (logindata) => {
     try {
-        await login({ email: logindata.email, password: logindata.password });
+        await login({ email: logindata.email+'@mail.com', password: logindata.password });
+        router.push('/welcome')
         
     } catch (e) {
         console.log(e)
      }
 };
 
+const fetchProducts = async () => {
+  try {
+    
+    const items = await getItems({
+      collection: "product"
+    });
+    product.value = items
+  } catch (e) {}
+};
 
-const showAuth = ref(null)
+const onRegister = async (registerdata) => {
+  try {
+    const newUser = await createUser({ email: registerdata.email+'@mail.com', password: registerdata.password, role: 'f8fc491a-643b-47fd-a929-18b4c6b35a17' });
+  } catch (e) {}
+};
 
 </script>

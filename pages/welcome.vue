@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <TopNav>
+        <TopNavigationBar>
             <template #logo >
                 <Logo />
             </template>
@@ -9,7 +9,7 @@
                 <PointButton />
                 <AccountButton @click="ProfilShow" />
             </template>
-        </TopNav>
+        </TopNavigationBar>
 
         <MenuList v-if="showContent === null" >
             <template #menulist >
@@ -86,16 +86,19 @@
 </template>
 
 <script setup>
-// definePageMeta({
-//   middleware: 'auth' 
-// })
 
-// const { logout } = useDirectusAuth();
-// const user = useDirectusUser();
+definePageMeta({
+  middleware: ["auth"]
+})
 
-// const deconnecter = async () => {
-//   logout();
-// };
+const { logout } = useDirectusAuth();
+const user = useDirectusUser();
+const router = useRouter();
+
+const deconnecter = async () => {
+  logout();
+  router.push('/')
+};
 
 const showContent = ref(null);
 const showCart = ref(false);
